@@ -1,6 +1,6 @@
 # 🚩 ClauseTrap AI: Fine-Tuned Hugging Face + PyTorch `LoRA` Contract Red-Flag Highlighter
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?owner=velagapudirushi&repo=clause-trap-ai&branch=main&mainModule=app/streamlit_app.py)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://clause-trap-ai-td9znlf8ys5djnxeaxokp4.streamlit.app/)
 ![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![PyTorch LoRA](https://img.shields.io/badge/PyTorch-From--Scratch%20LoRA%20(r%3D8)-EE4C2C?logo=pytorch&logoColor=white)
 ![Hugging Face Dataset](https://img.shields.io/badge/Dataset-LexGLUE%20(unfair__tos%209%2C414%20clauses)-FFD21E?logo=huggingface&logoColor=black)
@@ -9,7 +9,8 @@
 
 ![ClauseTrap AI Architecture & Single-Screen Highlighter Banner](assets/clausetrap_hero_banner.png)
 
-> **1-Click Streamlit Cloud Deploy:** [Deploy `clause-trap-ai` on Streamlit Community Cloud](https://share.streamlit.io/deploy?owner=velagapudirushi&repo=clause-trap-ai&branch=main&mainModule=app/streamlit_app.py) (`mainModule`: `app/streamlit_app.py`)
+> **🌐 Live Deployed App:** [**https://clause-trap-ai-td9znlf8ys5djnxeaxokp4.streamlit.app/**](https://clause-trap-ai-td9znlf8ys5djnxeaxokp4.streamlit.app/)
+> **📦 GitHub Repository:** [**https://github.com/velagapudirushi/clause-trap-ai**](https://github.com/velagapudirushi/clause-trap-ai)
 
 ---
 
