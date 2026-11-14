@@ -1,0 +1,147 @@
+{
+  "dataset": "coastalcph/lex_glue (unfair_tos)",
+  "train_clauses_total": 5532,
+  "val_clauses_total": 2275,
+  "test_clauses_total": 1607,
+  "lora_architecture": {
+    "hf_backbone": "openai/clip-vit-base-patch32",
+    "lora_injected_linear_layers": 72,
+    "total_parameters": 64117384,
+    "trainable_parameters": 951432,
+    "trainable_pct": 1.48
+  },
+  "stage_1_zeroshot_base": {
+    "binary_trap_precision": 0.107,
+    "binary_trap_recall": 1.0,
+    "binary_trap_f1": 0.1934,
+    "micro_f1": 0.0243,
+    "macro_f1": 0.0377
+  },
+  "stage_2_lora_sft": {
+    "binary_trap_precision": 0.4859,
+    "binary_trap_recall": 0.9012,
+    "binary_trap_f1": 0.6314,
+    "micro_f1": 0.581,
+    "macro_f1": 0.6263
+  },
+  "stage_3_hard_negative_aligned_lora": {
+    "binary_trap_precision": 0.7553,
+    "binary_trap_recall": 0.8256,
+    "binary_trap_f1": 0.7889,
+    "micro_f1": 0.7222,
+    "macro_f1": 0.7485,
+    "per_category": [
+      {
+        "label_id": 0,
+        "code": "limitation_of_liability",
+        "name": "Limitation of Liability",
+        "support": 38,
+        "precision": 0.5577,
+        "recall": 0.7632,
+        "f1": 0.6444
+      },
+      {
+        "label_id": 1,
+        "code": "unilateral_termination",
+        "name": "Unilateral Termination",
+        "support": 38,
+        "precision": 0.6667,
+        "recall": 0.7895,
+        "f1": 0.7229
+      },
+      {
+        "label_id": 2,
+        "code": "unilateral_change",
+        "name": "Unilateral Change of Terms",
+        "support": 38,
+        "precision": 0.7931,
+        "recall": 0.6053,
+        "f1": 0.6866
+      },
+      {
+        "label_id": 3,
+        "code": "content_removal",
+        "name": "Arbitrary Content / IP Removal",
+        "support": 13,
+        "precision": 0.5455,
+        "recall": 0.9231,
+        "f1": 0.6857
+      },
+      {
+        "label_id": 4,
+        "code": "contract_by_using",
+        "name": "Silent 'Contract by Using' Consent",
+        "support": 23,
+        "precision": 0.8947,
+        "recall": 0.7391,
+        "f1": 0.8095
+      },
+      {
+        "label_id": 5,
+        "code": "choice_of_law",
+        "name": "Foreign / Favorable Choice of Law",
+        "support": 13,
+        "precision": 0.75,
+        "recall": 0.9231,
+        "f1": 0.8276
+      },
+      {
+        "label_id": 6,
+        "code": "jurisdiction",
+        "name": "Distant Court Jurisdiction Lock",
+        "support": 16,
+        "precision": 0.7647,
+        "recall": 0.8125,
+        "f1": 0.7879
+      },
+      {
+        "label_id": 7,
+        "code": "arbitration",
+        "name": "Forced Private Arbitration & Class-Action Waiver",
+        "support": 7,
+        "precision": 0.7,
+        "recall": 1.0,
+        "f1": 0.8235
+      }
+    ]
+  },
+  "f1_lift_over_zeroshot": 0.5955,
+  "macro_f1_lift_over_zeroshot": 0.7108,
+  "calibrated_thresholds": [
+    0.52,
+    0.66,
+    0.7,
+    0.72,
+    0.7,
+    0.44,
+    0.48,
+    0.66
+  ],
+  "training_loss_curve": [
+    {
+      "stage": "Stage 2 (LoRA SFT)",
+      "epoch": 1,
+      "train_loss": 0.8606
+    },
+    {
+      "stage": "Stage 2 (LoRA SFT)",
+      "epoch": 2,
+      "train_loss": 0.3831
+    },
+    {
+      "stage": "Stage 2 (LoRA SFT)",
+      "epoch": 3,
+      "train_loss": 0.2072
+    },
+    {
+      "stage": "Stage 3 (Hard-Negative Aligned LoRA)",
+      "epoch": 4,
+      "train_loss": 0.236
+    },
+    {
+      "stage": "Stage 3 (Hard-Negative Aligned LoRA)",
+      "epoch": 5,
+      "train_loss": 0.1154
+    }
+  ]
+}

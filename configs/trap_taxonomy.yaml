@@ -1,0 +1,91 @@
+dataset_repo: "coastalcph/lex_glue"
+dataset_subset: "unfair_tos"
+hf_backbone_model: "openai/clip-vit-base-patch32"
+lora_rank: 8
+lora_alpha: 16.0
+lora_dropout: 0.05
+max_seq_length: 77
+
+# Official LexGLUE (unfair_tos) 8 label indices (0..7)
+trap_categories:
+  0:
+    code: "limitation_of_liability"
+    name: "Limitation of Liability"
+    severity: 8
+    badge_color: "#f97316"
+    plain_english: "The company shields itself from financial responsibility even if its software, service outage, or negligence causes you direct harm or data loss."
+    pushback_question: "Can we cap liability mutually at 12 months of fees rather than waiving all company liability?"
+  1:
+    code: "unilateral_termination"
+    name: "Unilateral Termination"
+    severity: 8
+    badge_color: "#ef4444"
+    plain_english: "The provider or employer can suspend, terminate, or delete your account/contract at any time without cause, prior notice, or refund."
+    pushback_question: "Can we require 14–30 days written notice and a cure period before termination without cause?"
+  2:
+    code: "unilateral_change"
+    name: "Unilateral Change of Terms"
+    severity: 7
+    badge_color: "#f97316"
+    plain_english: "They reserve the right to change rules, fees, or contract terms whenever they want without your explicit consent."
+    pushback_question: "Will material changes require advance email notice and allow penalty-free cancellation?"
+  3:
+    code: "content_removal"
+    name: "Arbitrary Content / IP Removal"
+    severity: 6
+    badge_color: "#eab308"
+    plain_english: "They can delete, block, or take down your uploaded files, data, or work product at their sole discretion without notice."
+    pushback_question: "Can we include a 7-day data export window before any content removal except where required by law?"
+  4:
+    code: "contract_by_using"
+    name: "Silent 'Contract by Using' Consent"
+    severity: 6
+    badge_color: "#eab308"
+    plain_english: "Simply opening, browsing, or continuing to use the site automatically locks you into new legal terms even if you never clicked 'Agree'."
+    pushback_question: "Should binding contract modifications require an explicit opt-in signature or clickwrap acceptance?"
+  5:
+    code: "choice_of_law"
+    name: "Foreign / Favorable Choice of Law"
+    severity: 7
+    badge_color: "#f97316"
+    plain_english: "Forces the contract to be interpreted under a specific state or foreign country's laws, stripping away your local consumer or labor protections."
+    pushback_question: "Can the governing law be set to the jurisdiction where the user or employee actually resides?"
+  6:
+    code: "jurisdiction"
+    name: "Distant Court Jurisdiction Lock"
+    severity: 8
+    badge_color: "#ef4444"
+    plain_english: "If a dispute arises, you are legally forced to travel and file lawsuits exclusively in a distant city or foreign court chosen by the company."
+    pushback_question: "Can disputes be heard in local courts or via remote proceedings in the consumer's home jurisdiction?"
+  7:
+    code: "arbitration"
+    name: "Forced Private Arbitration & Class-Action Waiver"
+    severity: 10
+    badge_color: "#dc2626"
+    plain_english: "CRITICAL TRAP: You waive your constitutional right to sue in a public court or join a class-action lawsuit, forcing secret individual arbitration."
+    pushback_question: "Is there a 30-day opt-out clause for mandatory arbitration, or can small-claims court disputes be excluded?"
+
+sample_contracts:
+  "Ride-Share & Delivery App Terms (Real Unfair ToS Excerpt)": |
+    Welcome to our platform. By accessing or browsing any part of our website or mobile application, you acknowledge and agree to be bound by these Terms of Service even without creating an account.
+    We reserve the right to modify, amend, or replace any part of these Terms or our pricing fees at our sole discretion at any time without prior notice to you.
+    You may use the app only for lawful personal purposes and must provide accurate registration information.
+    We may terminate or suspend your account and forfeit any unused wallet credits immediately, without prior notice or liability, for any reason whatsoever or for no reason at all.
+    In no event shall the Company, its affiliates, or licensors be liable for any direct, indirect, incidental, consequential, or special damages arising out of your use of the service, even if advised of the possibility of such damages.
+    Any dispute, claim, or controversy arising out of or relating to these Terms shall be resolved exclusively by final and binding individual arbitration, and you expressly waive any right to participate in a class-action lawsuit or trial by jury.
+    These Terms shall be governed exclusively by the laws of the State of Delaware, excluding your local consumer protection statutes, and any permitted court proceedings must be brought solely in the state or federal courts located in San Francisco, California.
+
+  "SaaS Cloud & AI Workspace Agreement (Mixed Clauses)": |
+    1. Service Uptime: We strive to maintain 99.9% monthly availability for all paid enterprise workspaces and provide daily encrypted backups.
+    2. Customer Ownership: You retain full copyright and intellectual property ownership over all documents and datasets uploaded to your workspace.
+    3. Content Takedown: However, we may remove, disable access to, or delete any user content or project files at our sole discretion at any time without prior notice or explanation.
+    4. Unilateral Updates: We may revise these subscription terms and feature limits from time to time in our sole discretion, and your continued login constitutes binding acceptance of the updated agreement.
+    5. Liability Cap: Under no circumstances shall our total liability exceed zero dollars ($0.00), and we disclaim all liability for data corruption, security breaches, or lost business profits.
+    6. Billing Cycle: Paid plans renew monthly and may be canceled at any time from your account settings prior to the next billing date.
+
+  "Clean & Fair Consumer-Friendly Service Agreement (Grade A Demo)": |
+    1. Explicit Consent: These Terms take effect only after you explicitly click "I Agree" during account creation.
+    2. Advance Notice of Changes: If we make material updates to these Terms or subscription fees, we will notify you by email at least 30 days in advance so you can cancel penalty-free if you disagree.
+    3. Fair Account Suspension: We will only suspend accounts for documented violations of our acceptable use policy, and we will provide written notice and an opportunity to export your data.
+    4. Mutual Responsibility: Each party is responsible for direct damages caused by its own gross negligence or willful misconduct up to 12 months of subscription fees.
+    5. Local Consumer Rights: Nothing in this agreement limits your statutory consumer protection rights under the laws of your home country, and you may bring claims in your local small-claims or residential court.
